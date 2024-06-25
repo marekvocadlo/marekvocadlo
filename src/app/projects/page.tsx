@@ -36,7 +36,7 @@ const projects = [
     name: 'Partner portál',
     description:
       'Webová aplikace, která v přehledném rozhraní poskytuje uživatelům informace o jejich provizích.',
-    link: { href: '#', label: 'více o projektu' },
+    link: { href: '/articles/partner-portal', label: 'více o projektu' },
     logo: logoPortal,
     techs: [
       {
@@ -54,7 +54,7 @@ const projects = [
     name: 'Vote app',
     description:
       'Webová aplikace vyvinutá pro Českou bankovní asociaci, aby zjednodušila hlasování v rámci pravidelných schůzek.',
-    link: { href: '#', label: 'více o projektu' },
+    link: { href: '/articles/vote-app', label: 'více o projektu' },
     logo: logoCBA,
     techs: [
       {
@@ -71,7 +71,7 @@ const projects = [
       },
     ],
   },
-  {
+  /*{
     name: 'Birell Active',
     description:
       'Webová prezentace pro podporu prodeje nové produktové řady Birell Active.',
@@ -85,19 +85,22 @@ const projects = [
         name: 'Tailwind',
       },
     ],
-  },
+  },*/
   {
     name: 'Emailcampaigns.eu',
     description:
       'Webová prezentace komplexní platformy, kterou uživatelé využívají pro podporu email marketingu.',
-    link: { href: 'https://www.emailcampaings.eu/', label: 'emailcampaigns.eu' },
+    link: {
+      href: 'https://www.emailcampaigns.eu/',
+      label: 'emailcampaigns.eu',
+    },
     logo: logoEK,
     techs: [
       {
         name: 'React',
       },
       {
-        name: 'SASS',
+        name: 'Sass',
       },
     ],
   },
@@ -105,7 +108,10 @@ const projects = [
     name: 'SunsHyne Corridor',
     description:
       'Webová prezentace pro představení vodíkového projektu společnosti NET4GAS.',
-    link: { href: 'https://www.sunshynecorridor.eu/', label: 'sunshynecorridor.eu' },
+    link: {
+      href: 'https://www.sunshynecorridor.eu/',
+      label: 'sunshynecorridor.eu',
+    },
     logo: logoSunshyne,
     techs: [
       {
@@ -136,7 +142,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       title="Vybrané projekty a použité technologie na kterých jsem během let pracoval."
-      intro="Za posledních sedm let jsem se podílel na celé řadě projektů. Nejvíc mi sedí práce s Reactem nebo Vue.js. Technologie se snažím vždy vybírat tak, aby co nejlépe vyhovovaly potřebám projektu a klienta."
+      intro="Za posledních sedm let jsem se podílel na řadě významných projektů. Vzhledem k tomu, že většina těchto projektů byla komerčního charakteru, nemohu poskytnout zdrojový kód. V níže uvedených projektech však detailně popisuji svou roli a přínos při jejich realizaci."
     >
       <ul
         role="list"
@@ -168,7 +174,7 @@ export default function Projects() {
               {project.techs.map((tech) => (
                 <span
                   key={tech.name}
-                  className="mr-2 mt-6 inline-flex items-center text-zinc-400 rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-zinc-500"
+                  className="mr-2 mt-6 inline-flex items-center rounded-md px-2 py-1 text-xs font-medium text-zinc-400 ring-1 ring-inset ring-zinc-500"
                 >
                   {tech.name}
                 </span>

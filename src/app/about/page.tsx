@@ -27,6 +27,7 @@ function SocialLink({
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
+        target="_blank"
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-blue-500" />
@@ -92,23 +93,30 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              Nové technologie mě vždy bavily, proto se snažím každý projekt
-              posouvat o krok dál. Při práci v týmu je pro mě nejdůležitější
-              spolehlivost, důvěra a schopnost dotáhnout věci do konce.
+              Aktuálně nejvíce projektů řeším s využitím frameworku Next.js nebo
+              Vue.js, při stylování preferuji Tailwind a pokud je potřeba CMS, v
+              poslední době mě hodně baví Strapi.
             </p>
             <p>
               O webové technologie jsem se začal zajímat díky studiu na ČVUT.
               Zkušenosti jsem začal uplatňovat v roce 2017, kdy jsem se vývoji
-              aplikací intenzivně věnoval.
+              aplikací začal intenzivně věnovat.
+            </p>
+            <p>
+              Mezi mé nejvýznamnější přednosti patří schopnost komunikace s
+              lidmi a práce v týmu. Efektivně motivuji ostatní, poskytuji
+              zpětnou vazbu za odvedenou práci a v případě potřeby jsem
+              připraven nabídnout pomocnou ruku, aby bylo možné projekty úspěšně
+              posunout vpřed nebo dokončit v daném termínu.
             </p>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink href="https://www.linkedin.com/in/marek-vocadlo/" icon={LinkedInIcon} className="mt-4">
               Spojme se na LinkedIn
             </SocialLink>
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+            <SocialLink href="https://github.com/marekvocadlo" icon={GitHubIcon} className="mt-4">
               Sledovat na GitHubu
             </SocialLink>
             <SocialLink

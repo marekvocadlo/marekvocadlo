@@ -193,14 +193,14 @@ function Role({ role }: { role: Role }) {
 function Education() {
   let education: Array<Role> = [
     {
-      company: 'Magisterské studium',
+      company: 'Magisterské studium (Ing.)',
       title: 'VŠE - Aplikovaná informatika',
       logo: logoVse,
       start: '2019',
       end: '2021',
     },
     {
-      company: 'Bakalářské studium',
+      company: 'Bakalářské studium (Bc.)',
       title: 'ČVUT - Softwarové inženýrství',
       logo: logoCvut,
       start: '2016',
@@ -290,7 +290,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href="marekvocadlo_zivotopis.pdf"
+        href="marekvocadlo_cv.pdf"
         target="_blank"
         download
         variant="secondary"
@@ -338,17 +338,14 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-full">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Team Leader & Frontend Developer
+            Team Leader & <br />
+            Frontend Developer
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Jmenuji se Marek Vočadlo a jsem softwarový inženýr se zaměřením na
-            moderní webové technologie. Nové technologie mě vždy bavily, proto
-            se snažím každý projekt posouvat o krok dál. Při práci v týmu je pro
-            mě nejdůležitější spolehlivost, důvěra a schopnost dotáhnout věci do
-            konce. <br />
-            <br />O webové technologie jsem se začal zajímat díky studiu na
-            ČVUT. Zkušenosti jsem začal uplatňovat v roce 2017, kdy jsem se
-            vývoji aplikací intenzivně věnoval.{' '}
+            Jsem softwarový inženýr se zaměřením na moderní webové technologie.
+            Aktuálně nejvíce projektů řeším s využitím frameworku Next.js nebo
+            Vue.js, při stylování preferuji Tailwind a&nbsp;pokud je potřeba CMS, v
+            poslední době mě hodně baví Strapi.&nbsp;
             <a href="/about" className="text-blue-500 dark:hover:text-blue-400">
               Více o mně.
             </a>

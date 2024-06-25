@@ -133,10 +133,10 @@ function MobileNavigation(
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">O mně</MobileNavItem>
-                <MobileNavItem href="/articles">Články</MobileNavItem>
+                {/*<MobileNavItem href="/articles">Články</MobileNavItem>*/}
                 <MobileNavItem href="/projects">Projekty</MobileNavItem>
-                <MobileNavItem href="/speaking">Vystupování</MobileNavItem>
-                <MobileNavItem href="/uses">Technologie</MobileNavItem>
+                <MobileNavItem href="/speaking">Webináře</MobileNavItem>
+                {/*<MobileNavItem href="/uses">Technologie</MobileNavItem>*/}
               </ul>
             </nav>
           </Popover.Panel>
@@ -182,7 +182,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/about">O&nbsp;mně</NavItem>
         {/*<NavItem href="/articles">Články</NavItem>*/}
         <NavItem href="/projects">Projekty</NavItem>
-        <NavItem href="/speaking">Vystupování</NavItem>
+        <NavItem href="/speaking">Webináře</NavItem>
         {/*<NavItem href="/uses">Technologie</NavItem>*/}
       </ul>
     </nav>

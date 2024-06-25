@@ -12,7 +12,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+      className="transition hover:text-blue-500 dark:hover:text-blue-400"
     >
       {children}
     </Link>
@@ -29,6 +29,7 @@ export function Footer() {
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                 <NavLink href="/about">O mně</NavLink>
                 <NavLink href="/projects">Projekty</NavLink>
+                <NavLink href="/speaking">Webináře</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Marek Vočadlo. Všechna práva vyhrazena.
