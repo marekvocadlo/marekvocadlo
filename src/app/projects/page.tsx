@@ -50,7 +50,7 @@ const projects = [
       },
     ],
   },
-  {
+  /*{
     name: 'Vote app',
     description:
       'Webová aplikace vyvinutá pro Českou bankovní asociaci, aby zjednodušila hlasování v rámci pravidelných schůzek.',
@@ -70,12 +70,15 @@ const projects = [
         name: 'MySQL',
       },
     ],
-  },
-  /*{
+  },*/
+  {
     name: 'Birell Active',
     description:
       'Webová prezentace pro podporu prodeje nové produktové řady Birell Active.',
-    link: { href: 'https://www.birell.cz/active/', label: 'birell.cz' },
+    link: {
+      href: 'https://www.birell.cz/serie/#produkty-active',
+      label: 'birell.cz',
+    },
     logo: logoBirell,
     techs: [
       {
@@ -85,7 +88,7 @@ const projects = [
         name: 'Tailwind',
       },
     ],
-  },*/
+  },
   {
     name: 'Emailcampaigns.eu',
     description:
@@ -142,7 +145,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       title="Vybrané projekty a použité technologie na kterých jsem během let pracoval."
-      intro="Za posledních sedm let jsem se podílel na řadě významných projektů. Vzhledem k tomu, že většina těchto projektů byla komerčního charakteru, nemohu poskytnout zdrojový kód. V níže uvedených projektech však detailně popisuji svou roli a přínos při jejich realizaci."
+      intro="Za posledních sedm let jsem se podílel na řadě významných projektů. Vzhledem k tomu, že většina těchto projektů byla komerčního charakteru, nemohu poskytnout zdrojový kód. V níže uvedených projektech popisuji svou roli a přínos při jejich realizaci."
     >
       <ul
         role="list"

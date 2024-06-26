@@ -35,9 +35,9 @@ function Article({ article }: { article: ArticleWithSlug }) {
 }
 
 export const metadata: Metadata = {
-  title: 'Articles',
+  title: 'Projekty',
   description:
-    'All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.',
+    'Vybrané projekty a použité technologie na kterých jsem během let pracoval.',
 }
 
 export default async function ArticlesIndex() {
@@ -45,8 +45,8 @@ export default async function ArticlesIndex() {
 
   return (
     <SimpleLayout
-      title="Writing on software design, company building, and the aerospace industry."
-      intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+      title="Vybrané projekty a použité technologie na kterých jsem během let pracoval."
+      intro="Za posledních sedm let jsem se podílel na řadě významných projektů. Vzhledem k tomu, že většina těchto projektů byla komerčního charakteru, nemohu poskytnout zdrojový kód. V níže uvedených projektech popisuji svou roli a přínos při jejich realizaci."
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">

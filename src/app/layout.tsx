@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: 'Marek Vočadlo - Team Leader & Frontend Developer',
   },
   description:
-    'Jsem softwarový inženýr se zaměřením na moderní webové technologie. Nové technologie mě vždy bavily, proto se snažím každý projekt posouvat o krok dál. Při práci v týmu je pro mě nejdůležitější spolehlivost, důvěra a schopnost dotáhnout věci do konce.',
+    'Jsem softwarový inženýr se zaměřením na moderní webové technologie. Aktuálně nejvíce projektů řeším s využitím frameworku Next.js nebo Vue.js.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

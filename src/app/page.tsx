@@ -89,9 +89,9 @@ function Article({ article }: { article: ArticleWithSlug }) {
       <Card.Title href={`/articles/${article.slug}`}>
         {article.title}
       </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
+      {/*<Card.Eyebrow as="time" dateTime={article.date} decorate>
         {formatDate(article.date)}
-      </Card.Eyebrow>
+      </Card.Eyebrow>*/}
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Více o projektu</Card.Cta>
     </Card>
@@ -260,7 +260,7 @@ function Resume() {
       end: '2019',
     },
     {
-      company: 'OSVČ',
+      company: 'Freelance',
       title: 'Frontend Developer',
       logo: me,
       start: '2018',
@@ -344,8 +344,8 @@ export default async function Home() {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Jsem softwarový inženýr se zaměřením na moderní webové technologie.
             Aktuálně nejvíce projektů řeším s využitím frameworku Next.js nebo
-            Vue.js, při stylování preferuji Tailwind a&nbsp;pokud je potřeba CMS, v
-            poslední době mě hodně baví Strapi.&nbsp;
+            Vue.js, při stylování preferuji Tailwind a&nbsp;pokud je potřeba
+            CMS, v poslední době mě hodně baví Strapi.&nbsp;
             <a href="/about" className="text-blue-500 dark:hover:text-blue-400">
               Více o mně.
             </a>

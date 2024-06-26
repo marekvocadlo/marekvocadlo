@@ -1,5 +1,6 @@
 import {ArticleLayout} from '@/components/ArticleLayout'
-import designSystem from './planetaria-design-system.png'
+import portal from './portal2.png'
+import banner from './banner.png'
 
 export const article = {
   author: 'Marek Vočadlo',
@@ -16,75 +17,66 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.
+Cílem bylo vytvořit webovou aplikaci, která převezme data z původního projektu, ale bude mít nový design a vylepšenou funkcionalitu.
 
-<Image src={designSystem} alt=""/>
+<Image src={portal} alt=""/>
 
-I knew that to get it right I was going to have to replicate the viewing conditions of someone from the future, so I grabbed my space helmet from the closet, created a new Figma document, and got to work.
+## Co jsem na projektu řešil?
 
-## Sermone fata
+1. Implementace frontendu (Next.js)
+2. Napojení databáze (Next.js, MySQL)
+3. Deployment
 
-Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
-in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
-variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
-torquere temptata, erit maneat et ramos, [iam](#) ait dominari
-potitus! Tibi litora matremque fumantia condi radicibus opusque.
+## Technologie
 
-Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur
-levitate quas ubi arcum ripas oculos abest. Adest [commissaque
-victae](#) in gemitus nectareis ire diva
-dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
-nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
-nil utinam paternos ima, commentaque.
+Vzhledem k tomu, že původní aplikace neměla žádnou API vrstvu, rozhodl jsem se postavit frontend na frameworku Next.js, který mimo jiné umožňuje tvořit API endpointy v rámci jednoho projektu. Typicky endpoint vypadal třeba takto:
 
 ```c
-exbibyte_wins = gigahertz(3);
-grayscaleUtilityClient = control_uat;
-pcmciaHibernate = oop_virus_console(text_mountain);
-if (stateWaisFirewire >= -2) {
-    jfs = 647065 / ldapVrml(tutorialRestore, 85);
-    metal_runtime_parse = roomComputingResolution - toolbarUpload +
-            ipx_nvram_open;
-} else {
-    maximizeSidebar *= suffix_url(flatbed + 2, requirements_encoding_node +
-            only_qbe_media, minicomputer);
+export default async function handler(req, res) {
+  try {
+    const connection = await pool.getConnection();
+    const [rows] = await connection.query(
+      'SELECT id, ... FROM users WHERE email = ?',
+      [session.user.email],
+    );
+    connection.release();
+
+    if (rows.length > 0) {
+      return res.status(200).json({ user: rows[0] });
+    } else {
+      return res.status(404).json({ error: 'User does not exist' });
+    }
+  }
+```
+
+Pro samotné načítání dat do komponent jsem následně implementoval custom hooky, díky kterým byl kód samotných komponent přehlednější.
+
+```c
+export function useUserData() {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get('/api/user');
+        setUserData(response.data.user);
+      } catch (error) {
+        console.error('Error when loading user data:', error);
+      }
+    };
+    fetchUserData();
+  }, []);
+
+  return userData;
 }
 ```
 
-Aere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc
-oscula nomina pignora corpus deserat.
+## Funkcionalita
 
-## Lethaei Pindumve me quae dinumerat Pavor
+Co se týče funkcionality, stojí za zmínku stránka marketing, kde si uživatel může vybrat typ banneru a na základě jeho unikátního ID se mu vygeneruje HTML kód pro vložení na jeho provizní web.
 
-Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec
-divite: et ille illa furit sim verbis Cyllenius.
+<Image src={banner} alt=""/>
 
-1. Captus inpleverunt collo
-2. Nec nam placebant
-3. Siquos vulgus
-4. Dictis carissime fugae
-5. A tacitos nulla viginti
+## Deployment
 
-Ungues fistula annoso, ille addit linoque motatque uberior verso
-[rubuerunt](#) confine desuetaque. _Sanguine_ anteit
-emerguntque expugnacior est pennas iniqui ecce **haeret** genus: peiora imagine
-fossas Cephisos formosa! Refugitque amata [refelli](#)
-supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
-regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
-ars talis.
-
-```c
-digital.webcam_dual_frequency = webmasterMms;
-if (5 + language_standalone_google) {
-    cc_inbox_layout *= file_character;
-    task += p;
-    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,
-            adf);
-}
-windows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),
-        dongleBashThumbnail), interpreter);
-```
-
-Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
-proelia: illo patrio _esse summus_, enim sua serpentibus, Hyleusque. Est coniuge
-recuso; refert Coroniden ignotos manat, adfectu.
+Vzhledem k tomu, že společnost má vlastní serverové řešení, bylo potřeba připravit prostředí s Node.js a na Gitlabu nastavit pipeline, která při commitu do hlavní větve kód otestuje, provede build a nahraje na server.
