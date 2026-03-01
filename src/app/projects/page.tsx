@@ -6,7 +6,6 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAMP from '@/images/logos/amp.svg'
 import logoPortal from '@/images/logos/portal.png'
 import logoBirell from '@/images/logos/birell.ico'
-import logoCBA from '@/images/logos/cba.png'
 import logoEK from '@/images/logos/emailkampane.svg'
 import logoSunshyne from '@/images/logos/sunshyne-corridor.jpg'
 

@@ -8,7 +8,9 @@
       "Bash(ls:*)",
       "Bash(node:*)",
       "Bash(./node_modules/.bin/next build:*)",
-      "Bash(npm view:*)"
+      "Bash(npm view:*)",
+      "Bash(npx next:*)",
+      "Bash(npx eslint:*)"
     ]
   }
 }
