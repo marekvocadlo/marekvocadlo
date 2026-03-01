@@ -164,3 +164,26 @@ před dokončením úprav.
 - Projekt je připraven pro **Vercel** (přítomna `.vercel` konfigurace)
 - `npm run build` generuje statické stránky vhodné pro serverless deployment
 - Obrázky jsou optimalizovány přes Next.js Image component + sharp
+
+## Důležité poznámky k závislostem
+
+### Proč `--webpack` flag
+Next.js 16 používá Turbopack defaultně, ale `@next/mdx` předává remark/rehype pluginy jako function reference,
+které Turbopack nedokáže serializovat. Proto všechny skripty používají `--webpack`:
+- `next dev --webpack`
+- `next build --webpack`
+
+### @headlessui/react v2 (breaking changes oproti v1)
+- `Transition.Root` → `Transition`
+- `Transition.Child` → `TransitionChild`
+- `Popover.Overlay` → `PopoverBackdrop`
+
+### React 19
+- `useRef<T>()` bez argumentu je TypeScript error — použij `useRef<T | undefined>(undefined)`
+
+### ESLint 9
+- Flat config format — konfigurace je v `eslint.config.mjs`, ne v `.eslintrc`
+
+### npm overrides
+- `serialize-javascript` je vynucen na `>=7.0.3` přes `overrides` v `package.json`
+- Bez toho by webpack/terser-webpack-plugin stahoval zranitelnou verzi
