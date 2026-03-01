@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
-import { Popover, Transition } from '@headlessui/react'
+import { Popover, Transition, TransitionChild, PopoverBackdrop } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
@@ -97,8 +97,8 @@ function MobileNavigation(
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
-      <Transition.Root>
-        <Transition.Child
+      <Transition>
+        <TransitionChild
           as={Fragment}
           enter="duration-150 ease-out"
           enterFrom="opacity-0"
@@ -107,9 +107,9 @@ function MobileNavigation(
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80" />
-        </Transition.Child>
-        <Transition.Child
+          <PopoverBackdrop className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80" />
+        </TransitionChild>
+        <TransitionChild
           as={Fragment}
           enter="duration-150 ease-out"
           enterFrom="opacity-0 scale-95"
@@ -140,8 +140,8 @@ function MobileNavigation(
               </ul>
             </nav>
           </Popover.Panel>
-        </Transition.Child>
-      </Transition.Root>
+        </TransitionChild>
+      </Transition>
     </Popover>
   )
 }
